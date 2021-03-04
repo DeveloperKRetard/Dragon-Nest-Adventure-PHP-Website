@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<document>
+	<ChannelList channel_name="龙之谷">
+		<Local local_name="DE_Aurora">
+			<version addr="http://127.0.0.1/Version/"/>
+			<update addr="http://127.0.0.1/Patches/"/>
+			<guidepage addr="http://127.0.0.1/txt.txt"/>
+			<homepage addr="http://127.0.0.1/txt.txt"/>
+			<login addr="172.16.109.52" port="14300"/>
+		</Local>
+	</ChannelList>
+</document>

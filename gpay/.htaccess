@@ -1,0 +1,3 @@
+RewriteEngine On
+RewriteRule ^balance.kreon?$ balance.php
+RewriteRule ^payment.kreon?$ payment.kreon.php

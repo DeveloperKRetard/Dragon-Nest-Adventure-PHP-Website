@@ -7,11 +7,11 @@
     <meta name="dcterms.created" content="Tue, 02 Mar 2021 04:49:31 GMT">
     <meta name="description" content="MMORPG Game of the year 'Dragon Nest Adventure'!">
     <meta name="keywords" content="Dragon Nest Adventure, DNA, Dragon Nest A">
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="./lib/css/index.css" type="text/css">
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../lib/css/user.css" type="text/css">
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.0.2/dist/tailwind.min.css" type="text/css">
 	<link href="https://tailwindcomponents.com/css/component.checkboxes.css" rel="stylesheet">
-	<title>Home - Dragon Nest Adventure</title>
+	<title>User - Dragon Nest Adventure</title>
   </head>
 <body>
 
@@ -23,15 +23,15 @@
    <nav>
     <ul>
 	 <li><a href="/">Home</a></li>
-	 <li><a href="/register">Register</a></li>
-	 <li><a href="/login">Login</a></li>
 	 <li><a href="/downloads">Download</a></li>
 	</ul>
    </nav>
   
   </div>
 </header>
-
+<form action="logout.php" method="post">
+<input id="submitter" action="logout.php" type="submit" class="focus:outline-none text-red-600 text-sm py-2.5 px-5 rounded-md border border-red-600" value="Logout">
+</form>
 	<footer class="foot">
 		<p class="foot-paragraph">©2021 Adventure Games LLC Inc.</p>
 		<div class="svg">

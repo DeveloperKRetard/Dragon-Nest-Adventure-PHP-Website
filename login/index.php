@@ -7,16 +7,24 @@
     <meta name="dcterms.created" content="Tue, 02 Mar 2021 04:49:31 GMT">
     <meta name="description" content="MMORPG Game of the year 'Dragon Nest Adventure'!">
     <meta name="keywords" content="Dragon Nest Adventure, DNA, Dragon Nest A">
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="./lib/css/index.css" type="text/css">
+	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="../lib/css/login.css" type="text/css">
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.0.2/dist/tailwind.min.css" type="text/css">
 	<link href="https://tailwindcomponents.com/css/component.checkboxes.css" rel="stylesheet">
-	<title>Home - Dragon Nest Adventure</title>
+    <script type="application/ld+json">{
+		"@context": "http://schema.org",
+		"@type": "Organization",
+		"name": "",
+		"url": "http://127.0.0.1",
+		"sameAs": []
+}</script>
+	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+    <title>Login - Dragon Nest Adventure</title>
   </head>
 <body>
 
-<header>
-  <div class="container">
+<header class="contain">
+  <div class="containernav">
    <a class="navlink">Dragon Nest Adventure</a>
    
    
@@ -31,7 +39,27 @@
   
   </div>
 </header>
-
+<div class="container">
+        <form action="login.php" method="post">
+		<br>
+			<p class="title">LOGIN</p>
+			<br>
+			<br>
+            	<label for="Username" class="UserN">USERNAME</label>
+				<div id="userid">
+            		<input class="user" type="text" id="Username" name="username" required>
+					</div>
+            		 <label for="Password" class="PassN">PASSWORD</label>
+					 <div id="passid">
+                    <input class="pass" id="Password" type="password" name="password" required>
+					</div>
+					<br>
+					<br>
+					<div id="input-button">
+			<input id="submitter" type="submit" class="focus:outline-none text-red-600 text-sm py-2.5 px-5 rounded-md border border-red-600" value="Sign-up">
+		  </div>
+		</form>
+	</div>
 	<footer class="foot">
 		<p class="foot-paragraph">©2021 Adventure Games LLC Inc.</p>
 		<div class="svg">
@@ -39,6 +67,5 @@
 	<a href="#" class="facebook"><svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" aria-hidden="true" focusable="false" width="1em" height="1em" style="-ms-transform: rotate(360deg); -webkit-transform: rotate(360deg); transform: rotate(360deg);" preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24"><g fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M0 12.067C0 18.033 4.333 22.994 10 24v-8.667H7V12h3V9.333c0-3 1.933-4.666 4.667-4.666c.866 0 1.8.133 2.666.266V8H15.8c-1.467 0-1.8.733-1.8 1.667V12h3.2l-.533 3.333H14V24c5.667-1.006 10-5.966 10-11.933C24 5.43 18.6 0 12 0S0 5.43 0 12.067z" fill="#626262"/></g></svg></a>
 	</div>
 	</footer>
-	
 </body>
 </html>

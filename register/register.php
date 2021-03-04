@@ -8,6 +8,9 @@ $DBaccount = "dnmembership";
 $name = $_POST['username'];
 $pass = $_POST['password'];
 
+$str_len1 = strlen($name);
+$str_len2 = strlen($pass);
+
 $s=null;
 $d=null;
 $s = @mssql_connect( $myServer, $myUser, $myPass ) or die();
@@ -29,15 +32,73 @@ if($name_exist > 0){
 		});</script>";
 exit();}
 
+if (!preg_match("#^[a-z0-9]+$#i", $name)){
+    echo "<script>
+        Swal.fire({
+            title: 'Warning',
+            text: 'Please match the requested Format!',
+            icon: 'warning',
+            showConfirmButton: false,
+            timer: 1500
+        }).then((result) => {
+		 window.history.back();
+		});</script>";
+exit();}
+
+if (preg_match("#[='\"]|true|false+#i", $pass)){
+    echo "<script>
+        Swal.fire({
+            title: 'Warning',
+            text: 'Please match the requested Format!',
+            icon: 'warning',
+            showConfirmButton: false,
+            timer: 1500
+        }).then((result) => {
+		 window.history.back();
+		});</script>";
+exit();}
+
+if ($str_len1 < 6){
+    echo "<script>
+        Swal.fire({
+            title: 'Warning',
+            text: 'Username is too short!',
+            icon: 'warning',
+            showConfirmButton: false,
+            timer: 1500
+        }).then((result) => {
+		 window.history.back();
+		});</script>";
+exit();}
+
+if ($str_len2 < 6){
+    echo "<script>
+        Swal.fire({
+            title: 'Warning',
+            text: 'Password is too short!',
+            icon: 'warning',
+            showConfirmButton: false,
+            timer: 1500
+        }).then((result) => {
+		 window.history.back();
+		});</script>";
+exit();}
+
 mssql_query("SET ANSI_NULLS ON");
 mssql_query("SET QUOTED_IDENTIFIER ON");
 mssql_query("SET CONCAT_NULL_YIELDS_NULL ON");
 mssql_query("SET ANSI_WARNINGS ON");
 mssql_query("SET ANSI_PADDING ON");
 
-$cash = 500000;
+
 $sql = "exec DNMembership.dbo.__CreateAccount '$name','$pass'";
 mssql_query($sql);
+
+$checkcash = mssql_query("SELECT cash FROM Accounts WHERE AccountName='$name'");
+$cashtotal = mssql_num_rows($checkcash);
+
+$cash = $cashtotal;
+
 mssql_close(); 
 echo "<script>
         Swal.fire({

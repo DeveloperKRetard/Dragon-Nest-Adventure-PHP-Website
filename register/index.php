@@ -8,7 +8,7 @@
     <meta name="description" content="MMORPG Game of the year 'Dragon Nest Adventure'!">
     <meta name="keywords" content="Dragon Nest Adventure, DNA, Dragon Nest A">
 	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="../lib/css/content.css" type="text/css">
+	<link rel="stylesheet" href="../lib/css/register.css" type="text/css">
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.0.2/dist/tailwind.min.css" type="text/css">
 	<link href="https://tailwindcomponents.com/css/component.checkboxes.css" rel="stylesheet">
     <script type="application/ld+json">{
@@ -18,12 +18,13 @@
 		"url": "http://127.0.0.1",
 		"sameAs": []
 }</script>
+<script src="../lib/jquery.min.js"></script>
 	<script src="//cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <title>Register - Dragon Nest Adventure</title>
   </head>
 <body>
 
-<header>
+<header class="contain">
   <div class="containernav">
    <a class="navlink">Dragon Nest Adventure</a>
    
@@ -32,6 +33,7 @@
     <ul>
 	 <li><a href="/">Home</a></li>
 	 <li><a href="/register">Register</a></li>
+	 <li><a href="/login">Login</a></li>
 	 <li><a href="/downloads">Download</a></li>
 	</ul>
    </nav>
