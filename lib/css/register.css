@@ -25,6 +25,13 @@ body {
  padding-left: 50px;
 }
 
+.EmailN {
+ font-family: 'Montserrat', sans-serif;
+ color: #dbdbdb;
+ font-size: 10px;
+ padding-left: 50px;
+}
+
 .PassN {
  font-family: 'Montserrat', sans-serif;
  color: #dbdbdb;
@@ -39,7 +46,7 @@ body {
  text-align: center;
 }
  
-input[type=text], input[type=password] {
+input[type=text], input[type=password], input[type=email] {
  width: 70% !important;
  height: 30px !important;
  border-radius: 3px;
@@ -76,6 +83,11 @@ input[type=submit]:hover {
  margin: auto;
 }
 
+.email {
+ display: inline-block !important;
+ margin: auto;
+}
+
 .pass {
  display: inline-block !important;
  margin: auto;
@@ -84,6 +96,11 @@ input[type=submit]:hover {
 #userid {
  text-align: center;
 }
+
+#emailid {
+ text-align: center;
+}
+
 
 #passid {
  text-align: center;

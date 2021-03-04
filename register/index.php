@@ -359,22 +359,30 @@ Negotiations will begin upon receipt of written notice by the party bringing the
 		<br>
 			<p class="title">REGISTRATION</p>
 			<br>
-			<br>
+               <label for="Email" class="EmailN">EMAIL</label>
+				<div id="emailid">
+            		<input class="email" type="email" id="Email" name="mail" required>
+					</div>
+					
             	<label for="Username" class="UserN">USERNAME</label>
 				<div id="userid">
             		<input class="user" type="text" id="Username" name="username" pattern="[A-Za-z0-9\-_\.]{6,12}" required>
 					</div>
+					
             		 <label for="Password" class="PassN">PASSWORD</label>
 					 <div id="passid">
                     <input class="pass" id="Password" type="password" name="password" pattern="#[='\"]|true|false+#i.{4,20}$" required>
 					</div>
+					
 					<br>
-					<br>
+					
 					<center>
 					<input type="checkbox" name="terms" class="form-checkbox h-5 w-5 text-red-600" required><span class="ml-2 text-gray-700 jspan">I agree to the<a id="myBtn" class="ml-2 text-red-700">Condition and Terms of Agreement.</a></span>
 					</center>
+					
 					<br>
 					<br>
+					
 					<div id="input-button">
 			<input id="submitter" type="submit" class="focus:outline-none text-red-600 text-sm py-2.5 px-5 rounded-md border border-red-600" value="Sign-up">
 		  </div>
