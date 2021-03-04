@@ -1,13 +1,10 @@
 <?php
-function redirect($DoDie = true) {
-    header('Location: /user/home');
-    if ($DoDie)
-        die();
-}
 session_start();
-if(isset($_SESSION['AccountID'])) {
-    redirect();
-}
+if(!$_SESSION['AccountID'])  
+{  
+  
+    header("Location: /login"); 
+}  
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +16,7 @@ if(isset($_SESSION['AccountID'])) {
     <meta name="description" content="MMORPG Game of the year 'Dragon Nest Adventure'!">
     <meta name="keywords" content="Dragon Nest Adventure, DNA, Dragon Nest A">
 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="./lib/css/index.css" type="text/css">
+	<link rel="stylesheet" href="/lib/css/index.css" type="text/css">
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.0.2/dist/tailwind.min.css" type="text/css">
 	<link href="https://tailwindcomponents.com/css/component.checkboxes.css" rel="stylesheet">
 	<title>Home - Dragon Nest Adventure</title>
@@ -33,10 +30,9 @@ if(isset($_SESSION['AccountID'])) {
    
    <nav>
     <ul>
-	 <li><a href="/">Home</a></li>
-	 <li><a href="/register">Register</a></li>
-	 <li><a href="/login">Login</a></li>
-	 <li><a href="/downloads">Download</a></li>
+	 <li><a href="/user/home">Home</a></li>
+	 <li><a href="/user">Profile</a></li>
+	 <li><a href="/user/downloads">Download</a></li>
 	</ul>
    </nav>
   

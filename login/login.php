@@ -30,6 +30,7 @@ $LoginResult=$info[LoginResult];
 if ($LoginResult==1){
 
 	$result = mssql_query("SELECT AccountID FROM Accounts WHERE AccountName='$name'");
+	$results = mssql_query("SELECT AccountName FROM Accounts WHERE AccountName='$name'");
 	
 	$exist = mssql_num_rows($result);
 	if($exist <= 0){
@@ -45,11 +46,15 @@ if ($LoginResult==1){
 		});</script>";
 	exit();}
 	
+	$infos=mssql_fetch_array($results);
+	$AccountName=$infos[AccountName];
+	
 	$info=mssql_fetch_array($result);
 	$AccountID=$info[AccountID];
 	mssql_close();
 	
 	$_SESSION['AccountID']=$AccountID;
+	$_SESSION['AccountName']=$AccountName;
 echo "<script>
        Swal.fire({
             title: 'Success',
@@ -57,7 +62,7 @@ echo "<script>
             icon: 'success',
             showConfirmButton: true
         }).then((result) => {
-		 window.location='/user';
+		 window.location='/user/home';
 		});</script>";
 exit();}
 

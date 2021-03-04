@@ -1,3 +1,14 @@
+<?php
+function redirect($DoDie = true) {
+    header('Location: /user/home');
+    if ($DoDie)
+        die();
+}
+session_start();
+if(isset($_SESSION['AccountID'])) {
+    redirect();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>

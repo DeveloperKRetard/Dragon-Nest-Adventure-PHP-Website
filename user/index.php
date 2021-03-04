@@ -1,3 +1,11 @@
+<?php
+session_start();
+if(!$_SESSION['AccountID'])  
+{  
+  
+    header("Location: /login"); 
+}  
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,22 +24,52 @@
 <body>
 
 <header>
-  <div class="container">
+  <div class="containernav">
    <a class="navlink">Dragon Nest Adventure</a>
    
    
    <nav>
     <ul>
-	 <li><a href="/">Home</a></li>
-	 <li><a href="/downloads">Download</a></li>
+	 <li><a href="/user/home">Home</a></li>
+	 <li><a href="/user">Profile</a></li>
+	 <li><a href="/user/downloads">Download</a></li>
 	</ul>
    </nav>
   
   </div>
 </header>
-<form action="logout.php" method="post">
-<input id="submitter" action="logout.php" type="submit" class="focus:outline-none text-red-600 text-sm py-2.5 px-5 rounded-md border border-red-600" value="Logout">
+<div class="container">
+<h1>EMAIL : <?php
+include 'mail.php';
+?></h1>
+&nbsp
+
+<h1>USERNAME : <?php
+include 'user.php';
+?></h1>
+
+&nbsp
+
+<h1>IP ADDRESS : <?php
+ include 'IP.php';
+?></h1>
+
+&nbsp
+
+<h1>Cash : <?php
+ include 'cash.php';
+?></h1>
+
+<div class="logout">
+<form action="/changemail" method="post">
+<input id="submitted" type="submit" class="focus:outline-none text-red-600 text-sm py-2.5 px-5 rounded-md border border-red-600" value="Change Email">
 </form>
+<form action="logout.php" method="post">
+<input id="submitter" type="submit" class="focus:outline-none text-red-600 text-sm py-2.5 px-5 rounded-md border border-red-600" value="Logout">
+</form>
+</div>
+</div>
+
 	<footer class="foot">
 		<p class="foot-paragraph">©2021 Adventure Games LLC Inc.</p>
 		<div class="svg">
