@@ -10,11 +10,14 @@ $DBaccount = "dnmembership";
 $name = $_POST['username'];
 $pass = $_POST['password'];
 
+$s=null;
+$d=null;
+
 $s = @mssql_connect( $myServer, $myUser, $myPass ) or die ();
 $d = @mssql_select_db($DBaccount, $s) or die ();
 if (!$s)
   {
-  die('Could not connect: ' . mysql_error());
+  die('Could not connect: ' . mssql_error());
 }
 
 mssql_query("SET ANSI_NULLS ON");
@@ -45,7 +48,7 @@ if ($LoginResult==1){
 		 window.history.back();
 		});</script>";
 	exit();}
-	
+
 	$infos=mssql_fetch_array($results);
 	$AccountName=$infos[AccountName];
 	
@@ -55,6 +58,7 @@ if ($LoginResult==1){
 	
 	$_SESSION['AccountID']=$AccountID;
 	$_SESSION['AccountName']=$AccountName;
+    
 echo "<script>
        Swal.fire({
             title: 'Success',

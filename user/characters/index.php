@@ -15,8 +15,8 @@ if(!$_SESSION['AccountID'])
     <meta name="dcterms.created" content="Tue, 02 Mar 2021 04:49:31 GMT">
     <meta name="description" content="MMORPG Game of the year 'Dragon Nest Adventure'!">
     <meta name="keywords" content="Dragon Nest Adventure, DNA, Dragon Nest A">
-	<link rel="shortcut icon" href="../favicon.ico" type="image/x-icon">
-	<link rel="stylesheet" href="../lib/css/user.css" type="text/css">
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="stylesheet" href="/lib/css/user.css" type="text/css">
 	<link rel="stylesheet" href="https://unpkg.com/tailwindcss@2.0.2/dist/tailwind.min.css" type="text/css">
 	<link href="https://tailwindcomponents.com/css/component.checkboxes.css" rel="stylesheet">
 	<title>User - Dragon Nest Adventure</title>
@@ -40,41 +40,23 @@ if(!$_SESSION['AccountID'])
   </div>
 </header>
 <div class="container">
-<h1>EMAIL : <?php
-include 'mail.php';
+	<h1>Character Name : <?php
+include 'charinfo.php';
 ?></h1>
-&nbsp
 
-<h1>USERNAME : <?php
-include 'user.php';
-?></h1>
 
 &nbsp
 
-<h1>IP ADDRESS : <?php
- include 'IP.php';
+	<h1>Class : <?php
+include 'class.php';
 ?></h1>
 
 &nbsp
 
-<h1>Cash : <?php
- include 'cash.php';
+	<h1>Fatigue : <?php
+include 'fatigue.php';
 ?></h1>
 
-&nbsp
-
-<h1>Character Count : <?php
- include 'charcount.php';
-?></h1>
-
-<div class="logout">
-<form action="/changemail" method="post">
-<input id="submitted" type="submit" class="focus:outline-none text-red-600 text-sm py-2.5 px-5 rounded-md border border-red-600" value="Change Email">
-</form>
-<form action="logout.php" method="post">
-<input id="submitter" type="submit" class="focus:outline-none text-red-600 text-sm py-2.5 px-5 rounded-md border border-red-600" value="Logout">
-</form>
-</div>
 </div>
 
 	<footer class="foot">

@@ -14,8 +14,13 @@ $str_len2 = strlen($pass);
 
 $s=null;
 $d=null;
-$s = @mssql_connect( $myServer, $myUser, $myPass ) or die();
-$d = @mssql_select_db($DBaccount, $s) or die();
+
+$s = @mssql_connect( $myServer, $myUser, $myPass ) or die ();
+$d = @mssql_select_db($DBaccount, $s) or die ();
+if (!$s)
+  {
+  die('Could not connect: ' . mssql_error());
+}
 
 $checkuser = mssql_query("SELECT AccountName FROM Accounts WHERE AccountName='$name'");
 $name_exist = mssql_num_rows($checkuser);
